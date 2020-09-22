@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import logo from './logo.svg';
 import Container from "./components/Container"
 import Table from "./components/Table/index"
 import './App.css';

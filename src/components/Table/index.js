@@ -4,7 +4,7 @@ import "./style.css";
 
 function Table(props) {
   return (
-    <table id="myTable" className="table table-hover">
+    <table id="myTable" className="table table-dark table-hover">
       <thead>
         <TableTitle sortTable={props.sortTable}>
         </TableTitle>

@@ -37,6 +37,10 @@
   }
 }
 
+body {
+  background-image: url("./dark-grey-terrazzo.png");
+}
+
 .cursorPointer {
   cursor: pointer;
 }
