@@ -1,0 +1,13 @@
+tr {
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.568);
+  transition: .4s;
+}
+
+tr:hover {
+  transform: translate(5px);
+}
+
+.table td {
+  vertical-align: middle;
+}
+

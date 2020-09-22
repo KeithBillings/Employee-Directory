@@ -1,5 +1,6 @@
 import React from "react";
-import TableTitle from "../TableTitle"
+import TableTitle from "../TableTitle";
+import "./style.css";
 
 function Table(props) {
   return (

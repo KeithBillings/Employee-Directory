@@ -11,7 +11,6 @@ function App() {
 
   useEffect(() => {
     API.getUsersData().then((res) => {
-      console.log(res)
       setUsers(res);
     })
   }, []);

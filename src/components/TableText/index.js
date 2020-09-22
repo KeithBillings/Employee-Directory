@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css"
 
 function TableText({ image, name, gender, email, location, _id }) {
   return (
