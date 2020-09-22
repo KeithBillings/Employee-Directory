@@ -1,27 +1,16 @@
-import React from "react"
+import React from "react";
 
-function TableText() {
+function TableText({ image, name, gender, email, location, _id }) {
   return (
     <>
-    <tr>
-    <th scope="row">1</th>
-    <td>A</td>
-    <td>x</td>
-    <td>L</td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>A</td>
-    <td>y</td>
-    <td>M</td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>  
-    <td>A</td>
-    <td>z</td>
-    <td>N</td>
-  </tr>
-  </>
+      <tr>
+        <th scope="row"><img src={image} alt="users" /></th>
+        <td>{name}</td>
+        <td>{gender}</td>
+        <td>{email}</td>
+        <td>{location}</td>
+      </tr>
+    </>
   )
 }
 

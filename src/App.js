@@ -1,10 +1,21 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 // import logo from './logo.svg';
 import Container from "./components/Container"
 import Table from "./components/Table/index"
 import './App.css';
+import API from "./utils/API";
+import TableText from "./components/TableText"
 
 function App() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    API.getUsersData().then((res) => {
+      console.log(res)
+      setUsers(res);
+    })
+  }, []);
+
   function sortTable(n) {
     let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
     table = document.getElementById("myTable");
@@ -63,6 +74,16 @@ function App() {
   return (
     <Container>
       <Table sortTable={sortTable}>
+        {users.map(({ image, name, gender, email, location, _id }) => (
+          <TableText
+            image={image}
+            name={name}
+            gender={gender}
+            email={email}
+            location={location}
+            key={_id++}
+          />
+        ))}
       </Table>
     </Container>
   );

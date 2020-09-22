@@ -1,17 +1,15 @@
 import React from "react";
 import TableTitle from "../TableTitle"
-import TableText from "../TableText/"
 
-function Table({sortTable}) {
+function Table(props) {
   return (
     <table id="myTable" className="table table-hover">
       <thead>
-        <TableTitle sortTable={sortTable}>
+        <TableTitle sortTable={props.sortTable}>
         </TableTitle>
       </thead>
       <tbody>
-        <TableText>
-        </TableText>
+        {props.children}
       </tbody>
     </table>
   )
