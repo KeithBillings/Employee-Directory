@@ -3,7 +3,8 @@ import Container from "./components/Container"
 import Table from "./components/Table/index"
 import './App.css';
 import API from "./utils/API";
-import TableText from "./components/TableText"
+import TableText from "./components/TableText";
+import Jumbotron from "./components/Jumbotron";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -71,6 +72,7 @@ function App() {
 
   return (
     <Container>
+      <Jumbotron/>
       <Table sortTable={sortTable}>
         {users.map(({ image, name, gender, email, location, _id }) => (
           <TableText
