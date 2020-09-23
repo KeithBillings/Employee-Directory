@@ -70,9 +70,14 @@ function App() {
     }
   }
 
+  function filterResults() {
+    console.log("you have tried to filter results!");
+    
+  }
+
   return (
     <Container>
-      <Jumbotron/>
+      <Jumbotron filterResults={filterResults} />
       <Table sortTable={sortTable}>
         {users.map(({ image, name, gender, email, location, _id }) => (
           <TableText
