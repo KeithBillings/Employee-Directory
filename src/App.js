@@ -8,10 +8,12 @@ import Jumbotron from "./components/Jumbotron";
 
 function App() {
   const [users, setUsers] = useState([]);
+  const [filteredUsers, setFilteredUsers] = useState(users);
 
   useEffect(() => {
     API.getUsersData().then((userData) => {
       setUsers(userData);
+      setFilteredUsers(userData);
     })
   }, []);
 
@@ -72,20 +74,19 @@ function App() {
 
   function filterResults() {
     const filterResultsValue = document.getElementById("filterInput").value;
-    let filteredUsers = users.filter((user) => {
+    let filteredUsersData = users.filter((user) => {
       return (
         user.name.includes(filterResultsValue) || user.gender.includes(filterResultsValue) || user.email.includes(filterResultsValue) || user.location.includes(filterResultsValue)
       )
     });
-    setUsers(filteredUsers);
-    console.log('Filtered users are: ', filteredUsers);
+    setFilteredUsers(filteredUsersData);
   }
 
   return (
     <Container>
       <Jumbotron filterResults={filterResults} />
       <Table sortTable={sortTable}>
-        {users.map(({ image, name, gender, email, location, _id }) => (
+        {filteredUsers.map(({ image, name, gender, email, location, _id }) => (
           <TableText
             image={image}
             name={name}
