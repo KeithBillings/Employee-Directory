@@ -10,8 +10,8 @@ function App() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    API.getUsersData().then((res) => {
-      setUsers(res);
+    API.getUsersData().then((userData) => {
+      setUsers(userData);
     })
   }, []);
 
@@ -71,8 +71,14 @@ function App() {
   }
 
   function filterResults() {
-    console.log("you have tried to filter results!");
-    
+    const filterResultsValue = document.getElementById("filterInput").value;
+    let filteredUsers = users.filter((user) => {
+      return (
+        user.name.includes(filterResultsValue) || user.gender.includes(filterResultsValue) || user.email.includes(filterResultsValue) || user.location.includes(filterResultsValue)
+      )
+    });
+    setUsers(filteredUsers);
+    console.log('Filtered users are: ', filteredUsers);
   }
 
   return (
