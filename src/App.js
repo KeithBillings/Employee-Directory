@@ -93,7 +93,7 @@ function App() {
             gender={gender}
             email={email}
             location={location}
-            key={_id++}
+            key={_id}
           />
         ))}
       </Table>

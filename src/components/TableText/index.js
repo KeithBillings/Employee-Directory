@@ -1,10 +1,10 @@
 import React from "react";
 import "./style.css"
 
-function TableText({ image, name, gender, email, location, _id }) {
+function TableText({ image, name, gender, email, location, key }) {
   return (
     <>
-      <tr>
+      <tr key={key}>
         <th scope="row"><img src={image} alt="users" /></th>
         <td>{name}</td>
         <td>{gender}</td>
