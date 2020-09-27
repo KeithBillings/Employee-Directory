@@ -1,68 +1,66 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Employee Directory
 
-## Available Scripts
+## Table of Contents 
 
-In the project directory, you can run:
+* [About](#About)
+* [Deployment](#Deployment)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [Technologies](#Technologies)
+* [License](#License)
+* [Tests](#Tests)
+* [Screenshots](#Screenshots)
+* [Author](#Author)
+* [Questions](#Questions)
 
-### `npm start`
+## About 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A React app that shows a randomly generated directory of "employees" that are able to be sorted and/or filtered.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Deployment 
 
-### `npm test`
+https://employee-directory-kmb.herokuapp.com/
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+To use this app on your local computer 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Clone the repo
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* Run the command ``` npm i ``` to install dependancies 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Seed the project with the command ``` npm run seed ``` 
 
-### `npm run eject`
+* To run the server ``` npm start ``` 
+    
+## Usage
+    
+To keep track of employees, and be able to sort or filter the list.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Technologies 
+    
+Technologies used in this application: Javascript, React, AJAX, Axios, Node, HTML, and CSS
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
+    
+MIT     
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Tests
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+No tests.
 
-## Learn More
+## Screenshots
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![landingPage](./screenshots/landingPage.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![dashboard](./screenshots/dashboard.png)
 
-### Code Splitting
+## Author
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Keith Billings
+    
+## Questions: 
+    
+If you have any questions about this project or would like to collaborrate with the authors, please reach out to anyone on the team. We look forward to working with you!
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [Keith Billings](https://github.com/KeithBillings) @ keithbillingsbusiness@gmail.com
