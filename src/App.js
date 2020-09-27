@@ -86,14 +86,14 @@ function App() {
     <Container>
       <Jumbotron filterResults={filterResults} />
       <Table sortTable={sortTable}>
-        {filteredUsers.map(({ image, name, gender, email, location, _id }) => (
+        {filteredUsers.map(({ image, name, gender, email, location}, index) => (
           <TableText
             image={image}
             name={name}
             gender={gender}
             email={email}
             location={location}
-            key={_id}
+            key={index}
           />
         ))}
       </Table>
