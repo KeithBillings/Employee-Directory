@@ -51,9 +51,7 @@ No tests.
 
 ## Screenshots
 
-![landingPage](./screenshots/landingPage.png)
-
-![dashboard](./screenshots/dashboard.png)
+![screenshot](./screenshot.png)
 
 ## Author
 
