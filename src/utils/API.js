@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default {
+const API = {
   getUsersData: function () {
     return axios.get("https://randomuser.me/api?results=20").then(function (res) {
     const users = res.data.results;
@@ -16,3 +16,5 @@ export default {
     })
   })
 }}
+
+export default API;

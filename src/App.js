@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import Container from "./components/Container"
-import Table from "./components/Table/index"
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Container from "./components/Container";
+import Table from "./components/Table/index";
+import "./App.css";
 import API from "./utils/API";
 import TableText from "./components/TableText";
 import Jumbotron from "./components/Jumbotron";
@@ -14,39 +14,45 @@ function App() {
     API.getUsersData().then((userData) => {
       setUsers(userData);
       setFilteredUsers(userData);
-    })
+    });
   }, []);
 
   function sortTable(n) {
-    let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-    table = document.getElementById("myTable");
-    switching = true;
+    const table: HTMLElement = document.getElementById("myTable");
+
+    let shouldSwitch: boolean,
+      switching: boolean = true;
+
+    let switchcount: number,
+      i: number = 0;
+
     // Set the sorting direction to ascending:
-    dir = "asc";
-    /* Make a loop that will continue until
-    no switching has been done: */
+    let direction: "asc" | "desc" = "asc";
+
+    // Make a loop that will continue until no switching has been done:
     while (switching) {
+      let rows = table.rows;
       // Start by saying: no switching is done:
       switching = false;
-      rows = table.rows;
       /* Loop through all table rows (except the
       first, which contains table headers): */
-      for (i = 1; i < (rows.length - 1); i++) {
+      let lengthOfRowsMinusTheHeader = rows.length - 1; // declaring this a variable instead of putting it in the second paramter of the following for loop to avoid a bug that is generated when formatting document. The formatting removes the needed parenthesis
+      for (i = 1; i < lengthOfRowsMinusTheHeader; i++) {
         // Start by saying there should be no switching:
         shouldSwitch = false;
         /* Get the two elements you want to compare,
         one from current row and one from the next: */
-        x = rows[i].getElementsByTagName("TD")[n];
-        y = rows[i + 1].getElementsByTagName("TD")[n];
+        let x = rows[i].getElementsByTagName("TD")[n];
+        let y = rows[i + 1].getElementsByTagName("TD")[n];
         /* Check if the two rows should switch place,
         based on the direction, asc or desc: */
-        if (dir === "asc") {
+        if (direction === "asc") {
           if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
             // If so, mark as a switch and break the loop:
             shouldSwitch = true;
             break;
           }
-        } else if (dir === "desc") {
+        } else if (direction === "desc") {
           if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
             // If so, mark as a switch and break the loop:
             shouldSwitch = true;
@@ -64,8 +70,8 @@ function App() {
       } else {
         /* If no switching has been done AND the direction is "asc",
         set the direction to "desc" and run the while loop again. */
-        if (switchcount === 0 && dir === "asc") {
-          dir = "desc";
+        if (switchcount === 0 && direction === "asc") {
+          direction = "desc";
           switching = true;
         }
       }
@@ -73,11 +79,18 @@ function App() {
   }
 
   function filterResults() {
-    const filterResultsValue = document.getElementById("filterInput").value;
+    const filterResultsValue = document
+      .getElementById("filterInput")
+      .value.toLowerCase();
+
     let filteredUsersData = users.filter((user) => {
       return (
-        user.name.includes(filterResultsValue) || user.gender.includes(filterResultsValue) || user.email.includes(filterResultsValue) || user.location.includes(filterResultsValue)
-      )
+        user.name.includes(filterResultsValue) ||
+        user.gender.includes(filterResultsValue) ||
+        user.email.includes(filterResultsValue) ||
+        user.location.includes(filterResultsValue) ||
+        user.location.toLowerCase().includes(filterResultsValue)
+      );
     });
     setFilteredUsers(filteredUsersData);
   }
@@ -86,16 +99,18 @@ function App() {
     <Container>
       <Jumbotron filterResults={filterResults} />
       <Table sortTable={sortTable}>
-        {filteredUsers.map(({ image, name, gender, email, location}, index) => (
-          <TableText
-            image={image}
-            name={name}
-            gender={gender}
-            email={email}
-            location={location}
-            key={index}
-          />
-        ))}
+        {filteredUsers.map(
+          ({ image, name, gender, email, location }, index) => (
+            <TableText
+              image={image}
+              name={name}
+              gender={gender}
+              email={email}
+              location={location}
+              key={index}
+            />
+          )
+        )}
       </Table>
     </Container>
   );
